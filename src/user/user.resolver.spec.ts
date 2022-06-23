@@ -21,11 +21,11 @@ describe('UserResolver', () => {
   let resolver: UserResolver;
 
   const mockUserService = {
-    create: jest.fn().mockResolvedValue(user),
-    findAll: jest.fn().mockResolvedValue([user]),
-    findOne: jest.fn().mockResolvedValue(user),
-    update: jest.fn().mockResolvedValue(user),
-    remove: jest.fn().mockResolvedValue(true),
+    create: jest.fn(),
+    findAll: jest.fn(),
+    findOne: jest.fn(),
+    update: jest.fn(),
+    remove: jest.fn(),
   };
 
   beforeEach(async () => {
@@ -45,6 +45,7 @@ describe('UserResolver', () => {
 
   describe('createUser', () => {
     it('should create a user', async () => {
+      mockUserService.create.mockReturnValue(user);
       const result = await resolver.createUser(user);
 
       expect(mockUserService.create).toBeCalledTimes(1);
@@ -54,6 +55,7 @@ describe('UserResolver', () => {
 
   describe('findAll', () => {
     it('should get a user list', async () => {
+      mockUserService.findAll.mockReturnValue([user]);
       const result = await resolver.findAll();
 
       expect(mockUserService.create).toBeCalledTimes(1);
@@ -63,6 +65,7 @@ describe('UserResolver', () => {
 
   describe('findOne', () => {
     it('should get a single user', async () => {
+      mockUserService.findOne.mockReturnValue(user);
       const result = await resolver.findOne(1);
 
       expect(mockUserService.findAll).toBeCalledTimes(1);
@@ -72,6 +75,7 @@ describe('UserResolver', () => {
 
   describe('updateUser', () => {
     it('should update a user', async () => {
+      mockUserService.update.mockReturnValue(user);
       const result = await resolver.updateUser(userUpdate);
 
       expect(mockUserService.update).toBeCalledTimes(1);
@@ -81,6 +85,7 @@ describe('UserResolver', () => {
 
   describe('removeUser', () => {
     it('should remove a user', async () => {
+      mockUserService.remove.mockReturnValue(true);
       const result = await resolver.removeUser(1);
 
       expect(mockUserService.remove).toBeCalledTimes(1);
