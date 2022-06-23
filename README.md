@@ -18,6 +18,8 @@ $ docker compose up -d
 
 ## Running the app
 
+Rename .env.example file to .env
+
 ```bash
 # development
 $ npm run start
