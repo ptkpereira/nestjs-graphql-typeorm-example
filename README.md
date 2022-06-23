@@ -2,7 +2,7 @@
 
 ## Description
 
-Example backend API built with NestJS + GraphQL + TypeORM
+Example backend API built with NestJS + GraphQL + TypeORM and with implemented unit tests.
 
 ## Installation
 
