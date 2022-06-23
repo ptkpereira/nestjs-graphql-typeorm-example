@@ -2,12 +2,18 @@
 
 ## Description
 
-Example.
+Example backend API built with NestJS + GraphQL + TypeORM
 
 ## Installation
 
 ```bash
 $ npm install
+```
+
+## Docker Compose
+
+```bash
+$ docker compose up -d
 ```
 
 ## Running the app
